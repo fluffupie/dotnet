@@ -1,0 +1,124 @@
+﻿This file documents common & useful commands that can be used in the terminal.
+
+NOTE: These commands should be used in the same directory as your project's .csproj file.
+
+--- dotnet ef ---
+
+dotnet tool install --global dotnet-ef
+OR
+dotnet tool update --global dotnet-ef
+
+dotnet ef --version
+
+--- dotnet aspnet-codegenerator (only really needed for Mac & Linux, Windows Visual Studio users can use GUI) ---
+
+dotnet tool install -g dotnet-aspnet-codegenerator
+OR
+dotnet tool update -g dotnet-aspnet-codegenerator
+
+dotnet aspnet-codegenerator -h
+
+Example:
+
+dotnet aspnet-codegenerator controller -name MoviesController -m Movie -dc MvcMovieContext --relativeFolderPath Controllers --useDefaultLayout --referenceScriptLibraries
+
+--- dotnet ef commands (add migration & update database) ---
+
+dotnet ef migrations add <Name>
+
+Example:
+
+dotnet ef migrations add InitialCreate
+
+dotnet ef database update
+
+--- Sample Output ---
+
+--- dotnet ---
+
+D:\Visual Studio 2026\Projects\RMIT\2026 S2\Week4\MvcMovie> dotnet --version
+	10.0.300
+
+--- dotnet ef ---
+
+D:\Visual Studio 2026\Projects\RMIT\2026 S2\Week4\MvcMovie> dotnet tool install --global dotnet-ef
+	'dotnet-ef' is already installed.
+
+D:\Visual Studio 2026\Projects\RMIT\2026 S2\Week4\MvcMovie> dotnet tool update --global dotnet-ef
+	Tool 'dotnet-ef' is already installed.
+
+D:\Visual Studio 2026\Projects\RMIT\2026 S2\Week4\MvcMovie> dotnet ef --version
+	Entity Framework Core .NET Command-line Tools
+	10.0.8
+
+--- dotnet aspnet-codegenerator (only really needed for Mac & Linux, Windows Visual Studio users can use GUI) ---
+
+D:\Visual Studio 2026\Projects\RMIT\2026 S2\Week4\MvcMovie> dotnet tool install -g dotnet-aspnet-codegenerator
+	Tool 'dotnet-aspnet-codegenerator' is already installed.
+
+D:\Visual Studio 2026\Projects\RMIT\2026 S2\Week4\MvcMovie> dotnet tool update -g dotnet-aspnet-codegenerator
+	Tool 'dotnet-aspnet-codegenerator' is already installed.
+
+D:\Visual Studio 2026\Projects\RMIT\2026 S2\Week4\MvcMovie> dotnet aspnet-codegenerator -h
+
+	Usage: aspnet-codegenerator [arguments] [options]
+
+	Arguments:
+		generator  Name of the generator. Check available generators below.
+
+	Options:
+		-p|--project             Path to .csproj file in the project.
+		-n|--nuget-package-dir
+		-c|--configuration       Configuration for the project (Possible values: Debug/ Release)
+		-tfm|--target-framework  Target Framework to use. (Short folder name of the tfm. eg. net46)
+		-b|--build-base-path
+		--no-build
+
+	Available generators:
+		area           : Generates an MVC Area.
+		blazor-identity: Generates blazor identity files.
+		blazor         : Generates Blazor CRUD pages given a model.
+		controller     : Generates a controller.
+		identity       : Generates identity files.
+		minimalapi     : Generates an endpoints file (with CRUD API endpoints) given a model and optional DbContext.
+		razorpage      : Generates RazorPage(s).
+		view           : Generates a view.
+
+	RunTime 00:00:02.16
+
+--- dotnet ef commands (add migration & update database) ---
+
+D:\Visual Studio 2026\Projects\RMIT\2026 S2\Week4\MvcMovie> dotnet ef migrations add InitialCreate
+	Build started...
+	Build succeeded.
+	Done. To undo this action, use 'ef migrations remove'
+
+D:\Visual Studio 2026\Projects\RMIT\2026 S2\Week4\MvcMovie> dotnet ef database update
+	Build started...
+	Build succeeded.
+	Done.
+
+--- Tips ---
+
+Ensure you have the following NuGet packages installed in your project before running the dotnet ef commands:
+
+	Microsoft.EntityFrameworkCore.SqlServer
+	Microsoft.EntityFrameworkCore.Design
+
+Ensure you have the following NuGet package installed in your project before running the dotnet aspnet-codegenerator command:
+
+	Microsoft.VisualStudio.Web.CodeGeneration.Design
+
+Ensure .UseSqlServer is being used in Startup.cs for the database provider, e.g.,
+
+	services.AddDbContext<MvcMovieContext>(options =>
+		options.UseSqlServer(Configuration.GetConnectionString("MvcMovieContext")));
+
+Ensure the connection string exists in appsettings.json and is set to your database (unless running the example as is):
+
+	"ConnectionStrings": {
+		"MvcMovieContext": "Server=rmit.australiaeast.cloudapp.azure.com;Encrypt=False;Uid=<YOUR_USERNAME>;Pwd=<YOUR_PASSWORD>;Database=<YOUR_DATABASE>;MultipleActiveResultSets=True"
+	}
+
+NOTE: On the Azure server <YOUR_USERNAME> and <YOUR_DATABASE> are identical (both should be your student ID), e.g., s1234567_a2
+NOTE: You can exclude the Database=<YOUR_DATABASE> setting as by default the login will use the same database as the username.
