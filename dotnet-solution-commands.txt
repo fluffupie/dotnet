@@ -1,0 +1,32 @@
+A solution (.slnx or .sln) file points to one or more project files (.csproj). This can be useful for applications with
+multiple projects.
+
+To create a solution file in .slnx format:
+
+  dotnet new sln -f slnx -n <name>
+
+  Example (Test.slnx):
+  
+  dotnet new sln -f slnx -n Test
+
+For more solution commands see here: https://learn.microsoft.com/en-au/dotnet/core/tools/dotnet-sln
+
+To list projects use the following command in the same directory as the solution file:
+
+  dotnet sln list
+
+To add a project use the following command in the same directory as the solution file:
+
+  dotnet sln add <path-to-project-file>
+
+  Example:
+
+  dotnet sln add TestConsole/TestConsole.csproj
+
+To remove a project use the following command in the same directory as the solution file:
+
+  dotnet sln remove <path-to-project-file>
+
+  Example:
+
+  dotnet sln remove TestConsole/TestConsole.csproj

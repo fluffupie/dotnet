@@ -1,0 +1,35 @@
+﻿You can source control using any git client, e.g., CLI (command-line), GitHub Desktop, SourceTree, GitKraken,
+UI provided in Visual Studio / Visual Studio Code, etc...
+
+Recommended to install git by following the instructions from here: https://git-scm.com/install
+
+A list of Windows Git GUI's can be found here: https://git-scm.com/install/windows
+
+Many approaches can be used to successfully setup the git repository, below is one such approach:
+
+- First create a repository on GitHub
+- Go to https://github.com/rmit-wdt-s2-2026 -> Click the + icon in the top right -> New repository
+  OR
+  Go to https://github.com/organizations/rmit-wdt-s2-2026/repositories/new
+- Ensure Owner is set as: rmit-wdt-s2-2026
+- Set a Repository name, e.g., s1234567-test
+- Ensure Private is selected (not Public!)
+- Do NOT tick any boxes in the "Initialize this repository with" section, the repository will be imported later
+- Create a project through Visual Studio and create git repository locally
+- Ensure a .gitignore and .gitattributes files exist at the repository root (they should get created automatically)
+- If these files didn't get created you can use the ones present in this folder, or get the latest .gitignore file here:
+  https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
+  OR use the following command to create a .gitignore file: dotnet new gitignore
+- Commit all files to the repository if needed
+- Push your repository to GitHub. This can be done through the UI in Visual Studio or with commands, the commands
+  will be shown on your repository page in GitHub under "...or push an existing repository from the command line"
+- NOTE: You should be asked to login to GitHub at some stage, e.g., when pushing the repository for the first time
+- Refresh the page on GitHub and you should see your repository, files, commits, etc...
+
+- In future if you need another copy of this repository, e.g., different computer / group partner, etc... you would
+  clone the repository from GitHub, click the green "Code" button and copy the repository URL
+
+For more help on how to use git within Visual Studio refer to these links:
+
+- Visual Studio 2026 for Windows: https://learn.microsoft.com/en-au/visualstudio/version-control/git-with-visual-studio?view=visualstudio
+- Visual Studio Code:             https://code.visualstudio.com/docs/sourcecontrol/overview

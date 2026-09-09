@@ -1,0 +1,63 @@
+﻿You can read more here: https://learn.microsoft.com/en-au/dotnet/core/tools/dotnet
+
+For more specific commands see: https://learn.microsoft.com/en-au/dotnet/core/tools/dotnet#general
+
+For example dotnet new: https://learn.microsoft.com/en-au/dotnet/core/tools/dotnet-new
+
+# Check dotnet version - ensure it is version 10.
+
+    dotnet --version
+    10.0.300
+
+# NOTE: This will create a project without a solution file (.sln or .slnx file). See dotnet-solution-commands.txt for more information.
+
+    dotnet new console -n HelloWorldApplication
+
+# Check the content of the .csproj file with a text editor or by cat'ing it in the terminal.
+
+    cd HelloWorldApplication
+    cat HelloWorldApplication.csproj
+
+    <Project Sdk="Microsoft.NET.Sdk">
+
+      <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net10.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+      </PropertyGroup>
+
+    </Project>
+
+Take note of this file layout and specifically that the TargetFramework is set to "net10.0".
+
+The following commands are typically run in the same folder as a .csproj file.
+
+# To clean a project use dotnet clean (almost never necessary - shown here for completeness):
+
+    dotnet clean
+
+# To build a project use dotnet build.
+# NOTE: The dotnet run command will automatically build if needed:
+
+    dotnet build
+    Restore complete (0.3s)
+      HelloWorldApplication net10.0 succeeded (1.8s) → bin\Debug\net10.0\HelloWorldApplication.dll
+
+    Build succeeded in 0.9s
+
+# To run a project use dotnet run - this command will also trigger the project to be built if needed:
+
+    dotnet run
+
+    Hello, World!
+
+NOTE: You can pass command line arguments to the program - for example using this code:
+
+    Console.WriteLine(string.Join(' ', args));
+
+Run:
+
+    dotnet run -- Hello World using command line arguments!
+
+    Hello World using command line arguments!
