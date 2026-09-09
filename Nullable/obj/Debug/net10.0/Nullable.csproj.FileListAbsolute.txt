@@ -1,0 +1,14 @@
+C:\Users\Nina\Desktop\Week1-Lectorial\Nullable\obj\Debug\net10.0\Nullable.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Nina\Desktop\Week1-Lectorial\Nullable\obj\Debug\net10.0\Nullable.AssemblyInfoInputs.cache
+C:\Users\Nina\Desktop\Week1-Lectorial\Nullable\obj\Debug\net10.0\Nullable.AssemblyInfo.cs
+C:\Users\Nina\Desktop\Week1-Lectorial\Nullable\obj\Debug\net10.0\Nullable.csproj.CoreCompileInputs.cache
+C:\Users\Nina\Desktop\Week1-Lectorial\Nullable\bin\Debug\net10.0\Nullable.exe
+C:\Users\Nina\Desktop\Week1-Lectorial\Nullable\bin\Debug\net10.0\Nullable.deps.json
+C:\Users\Nina\Desktop\Week1-Lectorial\Nullable\bin\Debug\net10.0\Nullable.runtimeconfig.json
+C:\Users\Nina\Desktop\Week1-Lectorial\Nullable\bin\Debug\net10.0\Nullable.dll
+C:\Users\Nina\Desktop\Week1-Lectorial\Nullable\bin\Debug\net10.0\Nullable.pdb
+C:\Users\Nina\Desktop\Week1-Lectorial\Nullable\obj\Debug\net10.0\Nullable.dll
+C:\Users\Nina\Desktop\Week1-Lectorial\Nullable\obj\Debug\net10.0\refint\Nullable.dll
+C:\Users\Nina\Desktop\Week1-Lectorial\Nullable\obj\Debug\net10.0\Nullable.pdb
+C:\Users\Nina\Desktop\Week1-Lectorial\Nullable\obj\Debug\net10.0\Nullable.genruntimeconfig.cache
+C:\Users\Nina\Desktop\Week1-Lectorial\Nullable\obj\Debug\net10.0\ref\Nullable.dll
