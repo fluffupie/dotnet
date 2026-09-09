@@ -1,0 +1,8 @@
+dotnet tool install -g dotnet-aspnet-codegenerator
+OR
+dotnet tool update -g dotnet-aspnet-codegenerator
+
+dotnet aspnet-codegenerator identity -dc IdentityExample.Data.ApplicationDbContext
+OR
+dotnet aspnet-codegenerator identity -dc IdentityExample.Data.ApplicationDbContext `
+--files "Account.Register;Account.Login;Account.Logout"
