@@ -1,0 +1,42 @@
+﻿@using X.PagedList
+@using X.PagedList.Mvc.Core
+@model IPagedList<Order>
+@{
+    ViewData["Title"] = "View Orders";
+    var customer = (Customer) ViewBag.Customer;
+}
+
+<div>
+    <h1>Orders for @customer.CustomerId, @customer.CompanyName</h1>
+    <table class="table">
+        <tr>
+            <th>@Html.DisplayNameFor(x => x[0].OrderId)</th>
+            <th>@Html.DisplayNameFor(x => x[0].OrderDate)</th>
+            <th>@Html.DisplayNameFor(x => x[0].RequiredDate)</th>
+            <th>@Html.DisplayNameFor(x => x[0].ShippedDate)</th>
+            <th>@Html.DisplayNameFor(x => x[0].ShipName)</th>
+        </tr>
+        @foreach(var order in Model) {
+            <tr>
+                <td>@Html.DisplayFor(x => order.OrderId)</td>
+                <td>@Html.DisplayFor(x => order.OrderDate)</td>
+                <td>@Html.DisplayFor(x => order.RequiredDate)</td>
+                <td>@Html.DisplayFor(x => order.ShippedDate)</td>
+                <td>@Html.DisplayFor(x => order.ShipName)</td>
+            </tr>
+        }
+    </table>
+
+    @Html.PagedListPager(
+        Model,
+        page => Url.Action("ViewOrders", new { page }),
+        new PagedListRenderOptions {
+            LiElementClasses = ["page-item"],
+            PageClasses = ["page-link"]
+        }
+    )
+</div>
+
+<div>
+    <a asp-action="Index">Back to Customers</a>
+</div>
